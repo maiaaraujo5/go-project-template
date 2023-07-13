@@ -9,6 +9,6 @@ import (
 type Params struct {
 	fx.In
 
-	Handlers []handler.Handle
+	Handlers []handler.Handle `group:"handlers"`
 	Echo     *echo.Echo
 }

@@ -6,10 +6,10 @@ import (
 )
 
 type Getter struct {
-	service service.Service
+	service service.Servicer
 }
 
-func NewGetter(service service.Service) *Getter {
+func NewGetter(service service.Servicer) *Getter {
 	return &Getter{
 		service: service,
 	}

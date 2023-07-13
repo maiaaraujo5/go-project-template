@@ -2,10 +2,11 @@ package service
 
 import (
 	"context"
+
 	"github.com/maiaaraujo5/go-project-template/internal/app/project/domain/repository"
 )
 
-type service interface {
+type Servicer interface {
 	Execute(ctx context.Context) error
 }
 

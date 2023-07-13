@@ -10,7 +10,7 @@ func Module() fx.Option {
 	return fx.Options(
 		provider.Module(),
 		fx.Provide(
-			fx.Annotate(service.NewService, fx.As(new(service.Service))),
+			fx.Annotate(service.NewService, fx.As(new(service.Servicer))),
 		),
 	)
 }
