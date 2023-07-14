@@ -1,0 +1,6 @@
+gostart:
+  echo:
+    plugins:
+      sentry:
+        enviroment: homolog
+        debug: true

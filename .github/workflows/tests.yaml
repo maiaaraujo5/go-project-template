@@ -1,0 +1,33 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: "Test application"
+        uses: "./.github/workflows/templates/tests"
+
+  lint:
+    runs-on: ubunt-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.36
+

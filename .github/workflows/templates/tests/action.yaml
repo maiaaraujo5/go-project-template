@@ -1,0 +1,23 @@
+name: "Tests"
+
+inputs:
+  enabled:
+    required: false
+    default: true
+    type: boolean
+
+  go-version:
+    required: false
+    default: 1.19
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ inputs.go-version }}
+
+    - name: Test
+      shell: bash
+      run: make test

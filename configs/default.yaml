@@ -1,0 +1,10 @@
+gostart:
+  zerolog:
+    level: TRACE
+  echo:
+    plugins:
+      sentry:
+        enabled: true
+        dsn: "https://47173c199dfd4d83b18bb2f9a313b0da@o4505242226130944.ingest.sentry.io/4505302624501760"
+        tracesamplerate: 1.0
+
