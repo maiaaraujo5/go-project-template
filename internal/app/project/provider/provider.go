@@ -12,7 +12,7 @@ func NewProvider() *Provider {
 	return &Provider{}
 }
 
-func (p *Provider) Find(ctx context.Context) error {
+func (p *Provider) Find(context.Context) error {
 	log.Println("It´s Works")
 	return nil
 }
