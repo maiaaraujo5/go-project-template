@@ -2,6 +2,6 @@ package repository
 
 import "context"
 
-type Repository interface {
+type Finder interface {
 	Find(ctx context.Context) error
 }

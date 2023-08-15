@@ -6,21 +6,21 @@ import (
 	"github.com/maiaaraujo5/go-project-template/internal/app/project/domain/repository"
 )
 
-type Servicer interface {
+type Finder interface {
 	Execute(ctx context.Context) error
 }
 
-type Service struct {
-	repository repository.Repository
+type Find struct {
+	repository repository.Finder
 }
 
-func NewService(repository repository.Repository) *Service {
-	return &Service{
+func NewService(repository repository.Finder) *Find {
+	return &Find{
 		repository: repository,
 	}
 }
 
-func (s *Service) Execute(ctx context.Context) error {
+func (s *Find) Execute(ctx context.Context) error {
 	err := s.repository.Find(ctx)
 	if err != nil {
 		return err

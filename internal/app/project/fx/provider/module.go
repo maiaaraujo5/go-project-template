@@ -11,7 +11,7 @@ func Module() fx.Option {
 		fx.Provide(
 			fx.Annotate(
 				provider.NewProvider,
-				fx.As(new(repository.Repository)),
+				fx.As(new(repository.Finder)),
 			),
 		),
 	)
